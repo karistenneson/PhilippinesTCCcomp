@@ -1,0 +1,12 @@
+tcc10,NAMRIA,NAMRIA_LC,Union_ha,CentralCord_ha,Cagayan_ha,Isabela_ha,Mindoro_ha,Palawan_ha,Bohol_ha,Zamboanga_ha,SouthCotabato_ha,AgusanDelSur_ha
+Forest,Forest,Closed Forest,0,51951,205924,83615,13715,87467,0,14455,30390,48379
+Forest,Forest,Open Forest,7794,227468,123311,288381,182197,455582,18682,8679,29573,311547
+Forest,Forest,Mangrove Forest,1,0,2999,353,1737,23723,3965,226,0,0
+Forest,Non-forest,Brush or Shrubs,37371,95575,46797,46065,199680,200236,34899,23082,40223,172057
+Forest,Non-forest,Grassland,150,8486,2950,665,22209,2626,858,594,1332,1650
+Forest,Non-forest,Perennial Crop,214,139,6138,2146,88509,37058,36225,17953,4872,44848
+Forest,Non-forest,Annual Crop,2622,22077,4493,3530,4246,9276,1159,48,1615,5627
+Forest,Non-forest,Other,188,1947,1317,1256,2301,2817,236,53,170,28897
+Non-forest,Forest,Closed Forest,0,339,1908,2255,443,675,0,175,528,1312
+Non-forest,Forest,Open Forest,853,27326,13372,9712,8931,14998,1087,401,2352,16226
+Non-forest,Forest,Mangrove Forest,97,0,1758,221,2414,8926,4111,1082,20,0
