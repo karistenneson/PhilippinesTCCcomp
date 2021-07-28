@@ -39,3 +39,31 @@ rawData <- files %>%
   map_dfr(~ read_csv(file.path(dataPath, .)))
 
 write.csv(rawData, file = 'CEOdata/compiled_CEOsmpls07272021.csv', row.names = F)
+
+#####################################################################
+### Load data
+#####################################################################
+CEOsmpls <- read.csv('CEOdata\\compiled_CEOsmpls07272021.csv')
+
+CEOsmplsSubset<-CEOsmpls[is.na(CEOsmpls$Is.this.area.forest.) == F,]
+colnames(CEOsmplsSubset)
+
+colnames(CEOsmplsSubset)[21]<-'forest'
+colnames(CEOsmplsSubset)[22]<-'fTCC'
+colnames(CEOsmplsSubset)[23]<-'confidence'
+colnames(CEOsmplsSubset)[24]<-'notes'
+colnames(CEOsmplsSubset)[25]<-'demoPlot'
+colnames(CEOsmplsSubset)[26]<-'issues'
+colnames(CEOsmplsSubset)
+
+CEOsmplsSubset$smpl_tcc10_nam 
+
+tcc30_N<-CEOsmplsSubset[is.na(CEOsmplsSubset$smpl_tcc30_nam) == F, ]
+tcc10_N<-CEOsmplsSubset[is.na(CEOsmplsSubset$smpl_tcc10_nam) == F, ]
+tcc10_30<-CEOsmplsSubset[is.na(CEOsmplsSubset$smpl_comp10_30) == F, ]
+
+write.csv(tcc10_30, file = 'compiled_tcc10vs30_07272021.csv', row.names = F)
+write.csv(tcc10_N, file = 'compiled_tcc10vsNAMRIA_07272021.csv', row.names = F)
+write.csv(tcc30_N, file = 'compiled_tcc30vsNAMRIA_07272021.csv', row.names = F)
+
+
