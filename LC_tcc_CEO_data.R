@@ -74,17 +74,10 @@ forest_grass30 <- CEOsmpls30N[(CEOsmpls30N$smpl_tcc30_nam == 'Forest-Grassland'|
 boxplot(shrub10$fTCC, shrub30$fTCC, perennial10$fTCC, perennial30$fTCC, 
         annual10$fTCC, annual30$fTCC, forest_grass10$fTCC, forest_grass30$fTCC,
         main = "mean tree canopy cover in tcc10 by NAMRIA land cover",
-        border = NA, xaxt='n', yaxt = "n", frame = FALSE, notch = TRUE
+        border = NA, xaxt='n', yaxt = "n", frame = FALSE, notch = TRUE, col = 'white'
 )
-vec<-seq(from = 0, to = 100, by = 20)
-for (i in 1:6){
-abline(h= vec[i], col = 'grey')
-        }
-
-vec<-seq(from = 10, to = 110, by = 20)
-for (i in 1:6){
-        abline(h= vec[i], col = 'lightgrey', lty=2)
-}
+abline(h= 10, col = 'grey')
+abline(h= 30, col = 'grey')
 
 boxplot(shrub10$fTCC, shrub30$fTCC, perennial10$fTCC, perennial30$fTCC, 
         annual10$fTCC, annual30$fTCC, forest_grass10$fTCC, forest_grass30$fTCC,
@@ -95,7 +88,8 @@ boxplot(shrub10$fTCC, shrub30$fTCC, perennial10$fTCC, perennial30$fTCC,
                   "Annual 10", "Annual 30", "Grassland 10", "Grassland 30"),
         #las = 2,
         col = c("#BE5504","#BE5504","#FF69B4","#FF69B4", "pink","pink", "yellow", "yellow"),
-        notch = TRUE, add = T
+        #notch = TRUE, 
+        add = T
 )
 
 #####################################################################
@@ -104,30 +98,28 @@ boxplot(shrub10$fTCC, shrub30$fTCC, perennial10$fTCC, perennial30$fTCC,
 
 boxplot(shrub10$fTCC~shrub10$smpl_site,
         main = "mean tree canopy cover in tcc10 by NAMRIA land cover",
-        border = NA, xaxt='n', yaxt = "n", frame = FALSE, notch = TRUE
+        ylab = "percent tree canopy cover",xlab = "",
+        border = NA, xaxt='n', yaxt = "n", frame = FALSE, col = 'white',notch = TRUE
 )
-vec<-seq(from = 0, to = 100, by = 20)
-for (i in 1:6){
-        abline(h= vec[i], col = 'grey')
-}
+abline(h= 10, col = 'grey')
+abline(h= 30, col = 'grey')
 
-vec<-seq(from = 10, to = 110, by = 20)
-for (i in 1:6){
-        abline(h= vec[i], col = 'lightgrey', lty=2)
-}
-
-boxplot(shrub10$fTCC, shrub30$fTCC, perennial10$fTCC, perennial30$fTCC, 
-        annual10$fTCC, annual30$fTCC, forest_grass10$fTCC, forest_grass30$fTCC,
+boxplot(shrub10$fTCC~shrub10$smpl_site,
         main = "mean tree canopy cover in tcc10 by NAMRIA land cover",
         ylab = "percent tree canopy cover",
-        at = c(1,2, 3, 4, 5, 6, 7, 8),
-        names = c("Brush 10","Brush 30", "Perennial 10", "Perennial 30", 
-                  "Annual 10", "Annual 30", "Grassland 10", "Grassland 30"),
+        #at = c(1,2, 3, 4, 5, 6, 7, 8),
+        names = c("Agusan del Sur", "BoholL", "Cagayan", "Central Cordillera",
+                  "Isabela", "La Union", "Mindoro", "Palawan", 
+                  "S Cotabato", "Zamboanga City"),
         #las = 2,
-        col = c("#BE5504","#BE5504","#FF69B4","#FF69B4", "pink","pink", "yellow", "yellow"),
-        notch = TRUE, add = T
+        col = "#BE5504",#"#BE5504","#FF69B4","#FF69B4", "pink","pink", "yellow", "yellow"),
+        #notch = TRUE, 
+        add = T
 )
 
+sort(unique(shrub10$smpl_site))
+
+table(shrub10$fTCC, shrub10$smpl_site)
 
 #####################################################################
 ### tcc30 vs. NAMRIA
